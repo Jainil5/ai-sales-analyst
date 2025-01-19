@@ -1,0 +1,43 @@
+{
+  "intents": [
+    {
+      "tag": "street footwear",
+      "patterns": [
+        "what are the sales of street footwear?",
+        "what is the revenue of street footwear?",
+        "units sold of street footwear in california?",
+        "sales of street footwear in texas?",
+        "how many units of street footwear sold in atlanta?"
+      ],
+      "responses": [
+        "street footwear"
+      ]
+    },
+    {
+      "tag": "apparel",
+      "patterns": [
+        "what are the sales of apparel?",
+        "what is the revenue of apparel?",
+        "units sold of apparel in california?",
+        "sales of apparel in texas?",
+        "how many units of apparel sold in atlanta?"
+      ],
+      "responses": [
+        "apparel"
+      ]
+    },
+    {
+      "tag": "athletic footwear",
+      "patterns": [
+        "what are the sales of athletic footwear?",
+        "what is the revenue of athletic footwear?",
+        "units sold of athletic footwear in california?",
+        "sales of athletic footwear in texas?",
+        "how many units of athletic footwear sold in atlanta?"
+      ],
+      "responses": [
+        "athletic footwear"
+      ]
+    }
+  ]
+}

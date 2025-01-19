@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales Analysis Dashboard</title>
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background-color: #fff7e6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Header */
+        .header {
+            background-color: #ff9800;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            width: 100%;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: #ff9800;
+            padding: 1rem 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+
+        /* Cards Container */
+        .cards-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            width: 100%;
+            max-width: 1200px;
+            margin-top: 2rem;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .card {
+            background-color: #ff9800;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            height: 120px;
+        }
+
+        .card h3 {
+            margin-bottom: 0.5rem;
+            color: #000;
+            font-size: 1.3rem;
+            font-weight: bold;
+        }
+
+        .card p {
+            font-weight: bold;
+            font-size: 1.5rem;
+            color: orange;
+            background-color: #fff7e6;
+            padding: 0.2rem;
+            border-radius: 4px;
+            margin-top: auto;
+            margin-bottom: 0;
+        }
+
+        /* Chatbot Details Centered */
+        .chatbot-details {
+            text-align: center;
+            margin-top: 30 px;
+            padding: 10 px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            align-items: center;
+        }
+        .chatbot-details {
+            text-align: center;
+            margin-top: 2rem; /* Adjust the spacing from the above div */
+            padding: 10px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            position: relative; /* Use relative to allow it to follow the natural flow */
+            left: auto; /* Remove left alignment */
+            transform: none; /* Remove transformation */
+            align-items: center;
+        }
+
+        .chatbot-details h2 {
+            color: #ff9800;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .chatbot-details ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .chatbot-details ul li {
+            margin: 0.5rem 0;
+        }
+
+        /* Chatbot Section */
+        .chatbot-container {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #fff7e6;
+            padding: 1rem;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #chat-input {
+            padding: 0.8rem;
+            width: 90%;
+            max-width: 700px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1.2rem;
+        }
+
+        #chat-submit {
+            padding: 0.8rem 1.5rem;
+            background-color: #ff9800;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1.2rem;
+        }
+
+        #chat-submit:hover {
+            background-color: #e68900;
+        }
+
+        #chat-response {
+            text-align: center;
+            padding: 20 px;
+            font-size: 1.2rem;
+            background-color: #fff;
+            width: 90%;
+            max-width: 700px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            margin-top: 0.5rem;
+            font-weight: bolder;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
+            .cards-container {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .chatbot-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .chatbot-details {
+                width: 90%;
+                top: auto;
+                transform: translate(-50%, -30%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Sales Analysis Dashboard</h1>
+    </div>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="visualizations.html">Visualizations</a>
+        <a href="mom_analysis.html">MoM Analysis</a>
+    </div>
+
+    <div class="main-content">
+        <div class="cards-container">
+            <div class="card">
+                <h3>Month with Most Units Sold</h3>
+                <p id="most-units-sold">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Month with Highest Value</h3>
+                <p id="highest-value">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Highest Sold Category</h3>
+                <p id="highest-sold-category">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>City with Most Sales</h3>
+                <p id="city-most-sales">Loading...</p>
+            </div>
+        </div>
+        <!-- <div class="cards-container">
+            <div class="card">
+                <h3>Month with Most Units Sold</h3>
+                <p id="most-units-sold">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Month with Highest Value</h3>
+                <p id="highest-value">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>Highest Sold Category</h3>
+                <p id="highest-sold-category">Loading...</p>
+            </div>
+            <div class="card">
+                <h3>City with Most Sales</h3>
+                <p id="city-most-sales">Loading...</p>
+            </div>
+        </div> -->
+
+        <!-- <div class="chatbot-details">
+            <h2>Suggested Questions</h2>
+            <ul>
+                <li>HOW MANY UNITS WERE SOLD IN CALIFORNIA?</li>
+                <li>WHICH CITY HAD HIGHEST SALES?</li>
+            </ul>
+        </div> -->
+    </div>
+
+    <div class="chatbot-container">
+        <h2>Hey, How can our AI SALES ANALYST BOT help you ?</h2>
+        <input type="text" id="chat-input" placeholder="Type your question here...">
+        <button id="chat-submit">Send</button>
+        <div id="chat-response">
+            <p style="font-weight: bolder;">AI will generate a response here</p>
+        </div>
+        <button id="chat-submit">View chat history</button>
+    </div>
+
+    <script>
+        // Fetch sales data from the API
+        fetch('http://127.0.0.1:5000/api/sales-data') 
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('most-units-sold').textContent = data.most_units_sold;
+                document.getElementById('highest-value').textContent = data.highest_value;
+                document.getElementById('highest-sold-category').textContent = data.highest_sold_category;
+                document.getElementById('city-most-sales').textContent = data.city_most_sales;
+            })
+            .catch(error => console.error('Error fetching data:', error));
+
+        // Chatbot functionality
+        const chatSubmitButton = document.getElementById('chat-submit');
+        const chatInput = document.getElementById('chat-input');
+        const chatResponse = document.getElementById('chat-response'); 
+
+        chatSubmitButton.addEventListener('click', async () => {
+            const userInput = chatInput.value;
+            if (userInput) {
+                try {
+                    const response = await fetch('http://127.0.0.1:5000/api/chatbot', { 
+                        method: 'POST', 
+                        headers: { 'Content-Type': 'application/json' }, 
+                        body: JSON.stringify({ 'message': userInput }) 
+                    });
+                    const data = await response.text(); 
+                    chatResponse.innerHTML = `<p>${data}</p>`;
+                } catch (error) {
+                    console.error("Error fetching chatbot response:", error);
+                    chatResponse.innerHTML = `<p>Error: Unable to get response from chatbot.</p>`; 
+                }
+            }
+        });
+    </script>
+</body>
+</html>

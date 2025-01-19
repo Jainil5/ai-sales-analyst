@@ -1,0 +1,139 @@
+/* Global Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #fff7e6;
+    color: #333;
+}
+
+/* Header */
+.header {
+    background-color: #ff9800;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1rem;
+    width: 100%;
+    max-width: 1200px;
+    margin-top: 2rem;
+}
+
+.card {
+    background-color: #ff9800;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1.5rem;
+    text-align: center;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 120px;
+}
+
+.card h3 {
+    margin-bottom: 0.5rem;
+    color: #000;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+.card p {
+    font-weight: bold;
+    font-size: 1.5rem;
+    color: orange;
+    background-color: #fff7e6;
+    padding: 0.2rem;
+    border-radius: 4px;
+    margin-top: auto;
+    margin-bottom: 0;
+}
+
+/* Chatbot Details */
+.chatbot-details {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 1rem;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 800px;
+}
+
+.chatbot-details h2 {
+    color: #ff9800;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.chatbot-details ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.chatbot-details ul li {
+    margin: 0.5rem 0;
+}
+
+/* Chatbot Section */
+.chatbot-container {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff7e6;
+    padding: 1rem;
+    box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+#chat-input {
+    padding: 0.8rem;
+    width: 75%;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1.2rem;
+}
+
+#chat-submit {
+    padding: 0.8rem 1.5rem;
+    background-color: #ff9800;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+#chat-submit:hover {
+    background-color: #e68900;
+}
+
+#chat-response {
+    text-align: center;
+    padding: 1rem;
+    font-size: 1.2rem;
+    background-color: #fff;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .chatbot-container {
+        flex-direction: column;
+        align-items: center;
+    }
+}

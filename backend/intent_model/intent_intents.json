@@ -1,0 +1,45 @@
+{
+  "intents": [
+    {
+      "tag": "units_sold",
+      "patterns": [
+        "what are the sales in texas?",
+        "what is the sale of men streetwear?",
+        "units of women apparel sold in california?",
+        "sales of athletic wear in texas?",
+        "how many units were sold in atlanta?",
+        "sales in february?"
+      ],
+      "responses": [
+        "units_sold"
+      ]
+    },
+    {
+      "tag": "revenue",
+      "patterns": [
+        "what was the revenue of athletic footwear?",
+        "what is the revenue in march?",
+        "revenue of footwear in california?",
+        "how much revenue is generated in texas?",
+        "revenue generated in atlanta?"
+      ],
+      "responses": [
+        "revenue"
+      ]
+    },
+    {
+      "tag": "sales_revenue",
+      "patterns": [
+        "what was the sales and revenue of athletic footwear?",
+        "what is the sales and revenue in march?",
+        "sales and revenue of footwear in california?",
+        "how much revenue and sales is generated in texas?",
+        "revenue & sales generated in atlanta?",
+        "What is sale & revenue for march"
+      ],
+      "responses": [
+        "sales_revenue"
+      ]
+    }
+  ]
+}
