@@ -18,9 +18,10 @@ This project is an AI-powered sales analyst tool that combines deep learning, da
 
 ## SCREENSHOTS
 
-* HOME PAGE
+* **HOME PAGE:**
    ![Screenshot 2025-01-28 at 5 41 20 PM](https://github.com/user-attachments/assets/359f91f6-90e4-40db-a7d5-8a5d59ab9231)
-* CHATBOT USAGE
+  
+* **CHATBOT USAGE:**
   ![Screenshot 2025-01-28 at 5 42 21 PM](https://github.com/user-attachments/assets/f6f1b3bc-6c13-40a5-9281-05f28ee9cda2)
    ![Screenshot 2025-01-28 at 5 43 02 PM](https://github.com/user-attachments/assets/6e68df65-bb81-4a3f-81d8-9ef144195757)
    ![Screenshot 2025-01-28 at 5 44 26 PM](https://github.com/user-attachments/assets/35cd7af1-fe8f-4493-bbda-920fe81a0236)
