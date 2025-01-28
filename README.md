@@ -32,13 +32,12 @@ This project is an AI-powered sales analyst tool that combines deep learning, da
 1. Clone this repository:
    ```bash
    git clone https://jainil5/ai-sales-analyst.git
-2.
+2. Change Directory:
    ```bash
    cd backend
-3. 
+3. Run the server:
    ```bash
    python flask_app.py
-4. 
-   open home.html file
+4. Open the HTML file in frontend folder
    
    
