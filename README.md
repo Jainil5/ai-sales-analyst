@@ -37,4 +37,8 @@ This project is an AI-powered sales analyst tool that combines deep learning, da
    cd backend
 3. 
    ```bash
-   python flask_app.py   
+   python flask_app.py
+4. 
+   open home.html file
+   
+   
