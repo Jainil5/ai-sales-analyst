@@ -1,22 +1,16 @@
 from flask import Flask, jsonify, request
 from flask_cors import CORS
 from chatbot import generate_reponse
+from sales_analysis import metrics_data
+
 app = Flask(__name__)
 CORS(app)
-
-# Sample data - Adjusted to match JavaScript expectations
-sales_data = {
-    "most_units_sold": "December",
-    "highest_value": "10000 USD",
-    "highest_sold_category": "Athletic Footwear",
-    "city_most_sales": "New York"
-}
 
 @app.route('/api/sales-data', methods=['GET'])
 def get_sales_data():
     # You can print or log the sales_data for debugging
     app.logger.info("Sales data requested.")
-    return jsonify(sales_data)
+    return jsonify(metrics_data)
 
 @app.route('/api/chatbot', methods=['POST'])
 def chat():

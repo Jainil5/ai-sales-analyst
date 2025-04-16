@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales Analysis Dashboard</title>
+    <title>SALES ANALYSIS DASHBOARD</title>
     <style>
         /* Global Styles */
         body {
@@ -21,7 +21,7 @@
         .header {
             background-color: #ff9800;
             color: #fff;
-            padding: 1rem;
+            padding: 5 px;
             text-align: center;
             width: 100%;
         }
@@ -29,7 +29,7 @@
         /* Navbar */
         .navbar {
             background-color: #ff9800;
-            padding: 1rem 0;
+            padding: 30 px 0;
             width: 100%;
             display: flex;
             justify-content: space-around;
@@ -39,6 +39,7 @@
             text-decoration: none;
             color: #333;
             font-weight: bold;
+            font-style: oblique;
         }
 
         /* Cards Container */
@@ -63,7 +64,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            height: 120px;
+            height: 150px;
         }
 
         .card h3 {
@@ -201,31 +202,31 @@
 </head>
 <body>
     <div class="header">
-        <h1>Sales Analysis Dashboard</h1>
+        <h1>SALES ANALYSIS DASHBOARD</h1>
     </div>
     <div class="navbar">
-        <a href="index.html">Home</a>
-        <a href="visualizations.html">Visualizations</a>
-        <a href="mom_analysis.html">MoM Analysis</a>
+        <a href="index.html">HOME</a>
+        <a href="analysis.html">DETAILED ANALYSIS</a>
+        <a href="mom_analysis.html">MONTHLY ANALYSIS</a>
     </div>
 
     <div class="main-content">
         <div class="cards-container">
             <div class="card">
-                <h3>Month with Most Units Sold</h3>
-                <p id="most-units-sold">Loading...</p>
+                <h3>MONTH WITH HIGHEST SALES</h3>
+                <p id="home-card-1">Loading...</p>
             </div>
             <div class="card">
-                <h3>Month with Highest Value</h3>
-                <p id="highest-value">Loading...</p>
+                <h3>MONTH WITH TOP SALES</h3>
+                <p id="home-card-2">Loading...</p>
             </div>
             <div class="card">
-                <h3>Highest Sold Category</h3>
-                <p id="highest-sold-category">Loading...</p>
+                <h3>MOST SOLD CATEGORY</h3>
+                <p id="home-card-3">Loading...</p>
             </div>
             <div class="card">
-                <h3>City with Most Sales</h3>
-                <p id="city-most-sales">Loading...</p>
+                <h3>STATE WITH HIGHEST SALES</h3>
+                <p id="home-card-4">Loading...</p>
             </div>
         </div>
         <!-- <div class="cards-container">
@@ -265,16 +266,33 @@
         </div>
         <button id="chat-submit">View chat history</button>
     </div>
-
+    <!-- "units_2021": f"{yoy_sales.get(2021)} UNITS".upper(),
+    "revenue_2021":f"{yoy_revenue.get(2021)} $".upper(),
+    "units_2020": f"{yoy_sales.get(2020)} UNITS".upper(),
+    "revenue_2020":f"{yoy_revenue.get(2020)} $".upper(),
+    "top_month_sales":f"{get_best(mom_sales)[0]} - {get_best(mom_sales)[1]} UNITS".upper(),
+    "top_month_revenue":f"{get_best(mom_revenue)[0]} - {get_best(mom_revenue)[1]} $".upper(),
+    "least_month_sales":f"{get_least(mom_sales)[0]} - {get_least(mom_sales)[1]} UNITS".upper(),
+    "least_month_revenue":f"{get_least(mom_revenue)[0]} - {get_least(mom_revenue)[1]} $".upper(),
+    "top_revenue_product":f"{get_best(product_revenue)[0]} - {get_best(product_revenue)[1]} $".upper(),
+    "top_sold_product":f"{get_best(product_sales)[0]} - {get_best(product_sales)[1]} $".upper(),
+    "men_sales":f"{gender_sales.get('Men')} UNITS".upper(),
+    "men_revenue":f"{gender_revenue.get('Men')} $".upper(),
+    "women_sales":f"{gender_sales.get('Women')} UNITS".upper(),
+    "women_revenue":f"{gender_revenue.get('Women')} $".upper(),
+    "top_sold_type":f"{get_best(type_sales)[0]} - {get_best(type_sales)[1]} $".upper(),
+    "top_revenue_type":f"{get_best(type_revenue)[0]} - {get_best(type_revenue)[1]} $".upper(),
+    "top_sold_sub_type":f"{get_best(sub_type_sales)[0]} - {get_best(sub_type_sales)[1]} $".upper(),
+    "top_revenue_sub_type":f"{get_best(sub_type_revenue)[0]} - {get_best(sub_type_revenue)[1]} $".upper(), -->
     <script>
         // Fetch sales data from the API
         fetch('http://127.0.0.1:5000/api/sales-data') 
             .then(response => response.json())
             .then(data => {
-                document.getElementById('most-units-sold').textContent = data.most_units_sold;
-                document.getElementById('highest-value').textContent = data.highest_value;
-                document.getElementById('highest-sold-category').textContent = data.highest_sold_category;
-                document.getElementById('city-most-sales').textContent = data.city_most_sales;
+                document.getElementById('home-card-1').textContent = data.top_month_sales;
+                document.getElementById('home-card-2').textContent = data.top_sold_product;
+                document.getElementById('home-card-3').textContent = data.top_sold_type;
+                document.getElementById('home-card-4').textContent = data.top_state_sales;
             })
             .catch(error => console.error('Error fetching data:', error));
 

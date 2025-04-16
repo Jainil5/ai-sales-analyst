@@ -3,9 +3,6 @@ import json
 import torch
 from torch import nn  # Import nn from torch directly
 from torch.utils.data import Dataset, DataLoader
-import sys
-
-sys.path.append("backend")  # Assuming "backend" is the directory containing spacy_utils.py and model.py
 from spacy_utils import bag_of_words, tokenize, lemmatize
 from model import NeuralNet
 

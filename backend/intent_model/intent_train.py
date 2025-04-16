@@ -3,8 +3,6 @@ import json
 import torch
 import torch.nn as nn
 from torch.utils.data import Dataset, DataLoader
-import sys 
-sys.path.append("backend")
 from spacy_utils import bag_of_words, tokenize, lemmatize
 from model import NeuralNet
 

@@ -71,6 +71,9 @@ yoy_sales_df = new.groupby(["Year"])[['Units Sold']].sum().reset_index()
 mom_revenue_df = new.groupby(["Month"])[['Revenue']].sum().reset_index()
 mom_sales_df = new.groupby(["Month"])[['Units Sold']].sum().reset_index()
 
+state_revenue_df = new.groupby(["State"])[['Revenue']].sum().reset_index()
+state_sales_df = new.groupby(["State"])[['Units Sold']].sum().reset_index()
+
 gender_revenue_df = new.groupby(["Gender"])[['Revenue']].sum().reset_index()
 gender_sales_df = new.groupby(["Gender"])[['Units Sold']].sum().reset_index()
 
@@ -94,6 +97,8 @@ product_revenue = {}
 product_sales = {}
 mom_revenue = {}
 mom_sales = {}
+state_revenue = {}
+state_sales = {}
 sub_type_revenue = {}
 sub_type_sales = {}
 
@@ -118,6 +123,17 @@ for index, row in mom_sales_df.iterrows():
     key = row['Month']
     value = row['Units Sold']
     mom_sales.update({key:value})
+
+# States
+for index, row in state_revenue_df.iterrows():
+    key = row['State']
+    value = row['Revenue']
+    state_revenue.update({key:value})
+
+for index, row in state_sales_df.iterrows():
+    key = row['State']
+    value = row['Units Sold']
+    state_sales.update({key:value})
         
 # Gender data aggregation
 for index, row in gender_revenue_df.iterrows():
@@ -196,23 +212,31 @@ def get_least(data):
     value = data[key]
     return [key, value]
 
-data = {
+
+metrics_data = {
     "units_2021": f"{yoy_sales.get(2021)} UNITS".upper(),
     "revenue_2021":f"{yoy_revenue.get(2021)} $".upper(),
-    "units_2021": f"{yoy_sales.get(2020)} UNITS".upper(),
-    "revenue_2021":f"{yoy_revenue.get(2020)} $".upper(),
-    "top_month_sales":f"{get_best(mom_sales)[0]} - {get_best(mom_sales)[1]} UNITS".upper(),
-    "top_month_revenue":f"{get_best(mom_revenue)[0]} - {get_best(mom_revenue)[1]} $".upper(),
-    "least_month_sales":f"{get_least(mom_sales)[0]} - {get_least(mom_sales)[1]} UNITS".upper(),
-    "least_month_revenue":f"{get_least(mom_revenue)[0]} - {get_least(mom_revenue)[1]} $".upper(),
-    "top_revenue_product":f"{get_best(product_revenue)[0]} - {get_best(product_revenue)[1]} $".upper(),
-    "top_sold_product":f"{get_best(product_sales)[0]} - {get_best(product_sales)[1]} $".upper(),
+    "units_2020": f"{yoy_sales.get(2020)} UNITS".upper(),
+    "revenue_2020":f"{yoy_revenue.get(2020)} $".upper(),
+    "top_month_sales":f"{get_best(mom_sales)[0]} \n {get_best(mom_sales)[1]} UNITS".upper(),
+    "top_month_revenue":f"{get_best(mom_revenue)[0]} \n {get_best(mom_revenue)[1]} $".upper(),
+    "least_month_sales":f"{get_least(mom_sales)[0]} \n {get_least(mom_sales)[1]} UNITS".upper(),
+    "least_month_revenue":f"{get_least(mom_revenue)[0]} \n {get_least(mom_revenue)[1]} $".upper(),
+    "top_state_sales":f"{get_best(state_sales)[0]} \n {get_best(state_sales)[1]} UNITS".upper(),
+    "top_state_revenue":f"{get_best(state_revenue)[0]} \n {get_best(state_revenue)[1]} $".upper(),
+    "least_state_sales":f"{get_least(state_sales)[0]} \n {get_least(state_sales)[1]} UNITS".upper(),
+    "least_state_revenue":f"{get_least(state_revenue)[0]} \n {get_least(state_revenue)[1]} $".upper(),
+    "top_revenue_product":f"{get_best(product_revenue)[0]} \n {get_best(product_revenue)[1]} $".upper(),
+    "top_sold_product":f"{get_best(product_sales)[0]} \n {get_best(product_sales)[1]} $".upper(),
     "men_sales":f"{gender_sales.get('Men')} UNITS".upper(),
     "men_revenue":f"{gender_revenue.get('Men')} $".upper(),
     "women_sales":f"{gender_sales.get('Women')} UNITS".upper(),
     "women_revenue":f"{gender_revenue.get('Women')} $".upper(),
-    "top_sold_type":f"{get_best(type_sales)[0]} - {get_best(type_sales)[1]} $".upper(),
-    "top_revenue_type":f"{get_best(type_revenue)[0]} - {get_best(type_revenue)[1]} $".upper(),
-    "top_sold_sub_type":f"{get_best(sub_type_sales)[0]} - {get_best(sub_type_sales)[1]} $".upper(),
-    "top_revenue_sub_type":f"{get_best(sub_type_revenue)[0]} - {get_best(sub_type_revenue)[1]} $".upper(),
+    "top_sold_type":f"{get_best(type_sales)[0]} \n {get_best(type_sales)[1]} $".upper(),
+    "top_revenue_type":f"{get_best(type_revenue)[0]} \n {get_best(type_revenue)[1]} $".upper(),
+    "top_sold_sub_type":f"{get_best(sub_type_sales)[0]} \n {get_best(sub_type_sales)[1]} $".upper(),
+    "top_revenue_sub_type":f"{get_best(sub_type_revenue)[0]} \n {get_best(sub_type_revenue)[1]} $".upper(),
 }   
+
+
+print(metrics_data)
