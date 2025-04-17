@@ -22,14 +22,25 @@ Unlock the power of data with the AI Sales Analyst, a comprehensive tool designe
 
 * **HOME PAGE: A snapshot of the main dashboard showcasing key sales metrics and visualizations.**
     ```
-    ![AI Sales Analyst - Home Page](https://github.com/user-attachments/assets/359f91f6-90e4-40db-a7d5-8a5d59ab9231)
-    ```
+    ![Screenshot 2025-04-17 at 5 15 41 PM](https://github.com/user-attachments/assets/cf57bd68-87bf-412e-93fa-a3eab63a4554)
 
+    ```
+* **OTHER ANALYSIS PAGES: Snapshots of advanced analysis and some charts.**
+    ```
+    ![Screenshot 2025-04-17 at 5 15 53 PM](https://github.com/user-attachments/assets/3b0c36a9-de98-4b6e-a8c3-e81d83a7e5a0)
+    ![Screenshot 2025-04-17 at 5 15 53 PM](https://github.com/user-attachments/assets/bfe15372-3bc6-420b-b9aa-9cd6343ea23f)
+    ![Screenshot 2025-04-17 at 5 07 53 PM](https://github.com/user-attachments/assets/5fc312b4-1fde-4ee0-a555-a39cc9eea41f)
+    ![Screenshot 2025-04-17 at 5 08 27 PM](https://github.com/user-attachments/assets/e41732bb-96c0-4888-8f7e-dc61f8e7bb42)
+    ![Screenshot 2025-04-17 at 5 08 47 PM](https://github.com/user-attachments/assets/b1c6d105-8ea4-4149-a111-22169f6f43b5)
+
+    ```
+    
 * **CHATBOT INTERACTION: Examples of how to interact with the AI-powered chatbot to ask questions and receive insightful answers.**
     ```
-    ![AI Sales Analyst - Chatbot Usage - Question 1](https://github.com/user-attachments/assets/f6f1b3bc-6c13-40a5-9281-05f28ee9cda2)
-    ![AI Sales Analyst - Chatbot Usage - Answer 1](https://github.com/user-attachments/assets/6e68df65-bb81-4a3f-81d8-9ef144195757)
-    ![AI Sales Analyst - Chatbot Usage - Question 2](https://github.com/user-attachments/assets/35cd7af1-fe8f-4493-bbda-920fe81a0236)
+    ![Screenshot 2025-04-17 at 5 17 36 PM](https://github.com/user-attachments/assets/a0fbcbd7-839f-4733-9629-d1bd02dbcb72)
+    ![Screenshot 2025-04-17 at 5 18 44 PM](https://github.com/user-attachments/assets/e2f7f561-04d3-4a01-91a2-28565973b1b9)
+    ![Screenshot 2025-04-17 at 5 19 43 PM](https://github.com/user-attachments/assets/73277e4b-3be9-4761-a36c-38c4a68b76e2)
+
     ```
 
 ## ⚙️ Installation Guide
@@ -96,10 +107,3 @@ Contributions to the AI Sales Analyst project are welcome! If you have ideas for
 4.  Push to the branch.
 5.  Submit a pull request.
 
-## 📄 License
-
-[*(Add your project's license information here, e.g., MIT License)*](LICENSE)
-
-## 📧 Contact
-
-For any questions or feedback, please feel free to reach out to [*(Your Name/Email Address)*].
